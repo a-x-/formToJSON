@@ -115,8 +115,10 @@ For example:
 "ofr2":{"value":"Number * range: 1500",  
 "id":"outputForRange2"}  
 }
-
+##Files##
+In your project, you'll only need formToJSON.js, other files shown above are the README.md file (this information) and the index.html and the two CSS files which are part of the example.
 ##To do list##
+* Tidy up files and make the example more obvious
 * Testing - particularly across platforms and browsers
 * Bug fixes
 * Performance improvements
