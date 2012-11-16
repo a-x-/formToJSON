@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			formToJSON example
+		</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link href="./reset.css" rel="stylesheet">
+		<link href="./formToJSON.css" rel="stylesheet">
+		<script src="./formToJSON.js" defer></script>
+	</head>
+	<body>
+		<div id="main">
+			<h1>
+				formToJSON example
+			</h1>
+			<section id="form1">
+				<h2>
+					Form one
+				</h2>
+				<form name="formOne" id="form1" action="#target" enctype="multipart/form-data" method="post" oninput="ofr1.value='Range: '+parseInt(range.value);ofr2.value='Number * range: '+(parseInt(number.value)*parseInt(range.value))">
+					
+					
+					<div class="form_row">
+						<label for="plaintext">
+							Plain text input
+						</label>
+						<input type="text" name="plain_text" id="plaintext" placeholder="Enter plain text" title="This field accepts plain text" autofocus>
+					</div>
+					
+					<div class="form_row">
+						<label for="patterntext">
+							Pattern (regex) match text input
+						</label>
+						<input type="text" name="pattern_text" id="patterntext" placeholder="Enter an IPv4 address" title="This field accepts one dotted quad IPv4 IP address e.g. 1.2.3.4" pattern="((^|\.)((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]?\d))){4}$">
+					</div>
+					
+					<div class="form_row">
+						<label for="password">
+							Password input
+						</label>
+						<input type="password" name="password" id="password" placeholder="Enter a password" title="This field accepts a password with characters a-z, A-Z, 0-9 or _ only, minimum length 8 characters, max length 16 characters" pattern="([a-zA-Z0-9_]{8,16})">
+					</div>
+					
+					<div class="form_row">
+						<label for="search">
+							Search input
+						</label>
+						<input type="search" name="search" id="search" placeholder="Enter a search term" title="This field accepts plain text search terms">
+					</div>
+					
+					<div class="form_row">
+						<label for="singleemail">
+							Single email input
+						</label>
+						<input type="email" name="single_email" id="singleemail" placeholder="Enter one email address" title="This field accepts a single email address">
+					</div>
+					
+					<div class="form_row">
+						<label for="multiemail">
+							Multiple email input
+						</label>
+						<input type="email" name="multi_email" id="multiemail" placeholder="Enter one or more email addresses, comma separated" title="This field accepts one or more email addresss" multiple>
+					</div>
+					
+					
+					<div class="form_row">
+						<label for="singleurl">
+							Single url input
+						</label>
+						<input type="url" name="single_url" id="singleurl" placeholder="Enter one url" title="This field accepts a single url">
+					</div>
+					
+					<div class="form_row">
+						<label for="multiurl">
+							Multiple url input
+						</label>
+						<input type="url" name="multi_url" id="multiurl" placeholder="Enter one or more urls, comma separated" title="This field accepts one or more urls" multiple>
+					</div>
+
+					<div class="form_row">
+						<label for="datalist">
+							Datalist
+						</label>
+						<input type="text" name="datalist" id="datalist" placeholder="Start typing the name of a web browser" list="browser_datalist">
+						<datalist id="browser_datalist">
+							<option value="Firefox">
+							<option value="Chrome">
+							<option value="Safari">
+							<option value="Opera">
+							<option value="Internet Explorer">
+						</datalist>
+					</div>
+					
+					
+					
+					
+					<div class="form_row">
+						<label for="cb">
+							Checkbox
+						</label>
+						<input type="checkbox" name="cb" id="cb" value="This is the value the server will receive">
+					</div>
+
+					
+					<div class="form_row">
+						<label for="singlefile">
+							Single file input
+						</label>
+						<input type="file" name="single_file" id="singlefile">
+					</div>	
+					
+					<div class="form_row">
+						<label for="multifile">
+							Multiple file input
+						</label>
+						<input type="file" name="multi_file" id="multifile" multiple>
+					</div>	
+
+					
+
+					<fieldset>
+						<legend>
+							This is fieldset #1. It does not affect the JS
+						</legend>
+						<div class="form_row">
+							<label for="color">
+								Colour input
+							</label>
+							<input type="color" name="color" id="color" value="#b01600">
+						</div>
+						<div class="form_row">
+							<label for="number">
+								Number input
+							</label>
+							<input type="number" name="number" id="number" value="15" min="-10" max="50" step="5">
+						</div>
+						<div class="form_row">
+							<label for="range">
+								Range input
+							</label>
+							<input type="range" name="range" id="range" value="100" min="10" max="200" step="10">
+							<br>
+							<output id="outputForRange1" name="ofr1"></output>
+							<br>
+							<output id="outputForRange2" name="ofr2"></output>
+						</div>
+					</fieldset>
+					<fieldset>
+						<legend>
+							This is fieldset #2. It does not affect the JS either
+						</legend>
+						<div class="form_row">
+							<label for="date">
+								Date input
+							</label>
+							<input type="date" name="date" id="date">
+						</div>
+						<div class="form_row">
+							<label for="datetime">
+								Datetime input
+							</label>
+							<input type="datetime" name="datetime" id="datetime">
+						</div>
+						<div class="form_row">
+							<label for="datetimelocal">
+								Datetime local input
+							</label>
+							<input type="date" name="datetimelocal" id="datetimelocal">
+						</div>
+						<div class="form_row">
+							<label for="month">
+								Month input
+							</label>
+							<input type="month" name="month" id="month">
+						</div>
+						<div class="form_row">
+							<label for="week">
+								Week input
+							</label>
+							<input type="week" name="week" id="week">
+						</div>
+						<div class="form_row">
+							<label for="time">
+								Time input
+							</label>
+							<input type="time" name="time" id="time">
+						</div>
+					</fieldset>
+					<fieldset>
+						<legend>
+							This is fieldset #3. It does not affect the JS, surprisingly
+						</legend>
+						<div class="form_row">
+							<label for="textarea">
+								Textarea
+							</label>
+							<textarea name="textarea" id="textarea" cols="20" rows="5" placeholder="This is a normal textarea field, you can type anything you wish"></textarea>
+						</div>
+
+						<div class="form_row">
+							<label for="singleselect">
+								Single select
+							</label>
+							<select id="singleselect" name="single_select" title="You can only choose one item">
+								<option value="">
+									Placeholder blank value
+								</option>
+								<option value="opt1">
+									Option 1
+								</option>
+								<option value="opt2">
+									Option 2
+								</option>
+								<option value="opt3">
+									Option 3
+								</option>
+								<option>
+									Option 4 (no val attrib)
+								</option>
+							</select>
+						</div>
+
+						<div class="form_row">
+							<label for="multiselect">
+								Multi select
+							</label>
+							<select id="multiselect" multiple size="auto" name="multi_select" title="You can choose one or more items (cmd/ctrl click)">
+								<option value="opt1">
+									Option 1
+								</option>
+								<option value="opt2">
+									Option 2
+								</option>
+								<option value="opt3">
+									Option 3
+								</option>
+								<option>
+									Option 4 (no value attribute)
+								</option>
+							</select>
+						</div>
+
+
+					</fieldset>	
+
+					<div class="form_row">
+						<label for="r1" class="radio">
+							Radio1
+						</label>
+						<input type="radio" name="radioOne" value="radio1" id="r1">
+						
+						<label for="r2" class="radio">
+							Radio2
+						</label>
+						<input type="radio" name="radioOne" value="radio2" id="r2">
+						
+						<label for="r3" class="radio">
+							Radio3
+						</label>
+						<input type="radio" name="radioOne" value="radio3" id="r3">
+						
+						<label for="r4" class="radio">
+							Radio4
+						</label>
+						<input type="radio" name="radioOne" value="radio4" id="r4">
+					</div>
+
+					<button type="submit">
+						Submit form 1
+					</button>
+
+				</form>
+			</section>
+
+			<section id="form2">
+				<h2>
+					Form two
+				</h2>
+				<form name="formTwo" id="form2" action="#target" enctype="multipart/form-data" method="post">
+					<div class="form_row">
+						<label for="anotherTextInput">
+							Another text input
+						</label>
+						<input type="text" name="another_text_input" id="anotherTextInput" title="Another plain text input, this is required" required>
+					</div>
+
+					<button type="submit">
+						Submit form 2
+					</button>
+				</form>
+			</section>
+		</div>
+	</body>
+</html>
